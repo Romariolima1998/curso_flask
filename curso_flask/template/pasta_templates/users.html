@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}users{% endblock title %}
+
+{% from 'components/user.html' import user_component %}
+
+{% block content %}
+
+    {% include "components/notification.html" %}
+
+    {{ user_component(users) }}
+
+
+
+{% endblock content %}
+ 
+

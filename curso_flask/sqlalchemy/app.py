@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_required, login_user,logout_user
@@ -83,6 +85,8 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        remember = request.form['remember']
+
 
         user =User.query.filter_by(email=email).first()
         if not user:
@@ -93,7 +97,7 @@ def login():
             flash('credencias invalidas')
             return redirect(url_for('login'))
         
-        login_user(user)
+        login_user(user,remember=remember, duration=timedelta(days=7))
         return redirect(url_for('index'))
 
     return render_template('login.html')

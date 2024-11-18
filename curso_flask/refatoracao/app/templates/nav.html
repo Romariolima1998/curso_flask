@@ -1,0 +1,23 @@
+ <nav>
+    <ul class="nav nav-tabs">
+    {% if not current_user.is_authenticated %}
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('register')}}">register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('login')}}">login</a>
+        </li>
+
+    {% else %}
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('logout')}}">logout</a>
+        </li>
+        </ul>
+    {% endif %}
+</nav>
+
+           
+    
+

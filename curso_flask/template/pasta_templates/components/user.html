@@ -1,0 +1,16 @@
+{% macro user_component(users) %}
+
+{% for user in users %}
+    {% set name = user.name %}
+    <ul>
+        {% for k, v in user.items() %}
+        
+            <li class={{'bg-success' if user.active else 'bg-danger'}}>{{k}} = {{v}}</li>
+        
+        {% endfor %}
+            <li>{{user.since | format_date}}</li>
+            <li>{{name | upper}}</li>
+    </ul>
+{% endfor %}
+
+{% endmacro %}
