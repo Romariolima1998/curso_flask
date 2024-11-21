@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% from 'bootstrap/form.html' import render_form %}
  {% include "nav.html" %}
 
+ <form action="{{ url_for('register') }}" method='POST'>
+ 
+  {{render_form(form)}}
+ 
+ </form>
+
+
+
+
+<!--
 <form action="{{ url_for('register') }}" method='POST'>
   <div class="form-group"></div>
   <div class="form-group">
@@ -29,7 +40,7 @@
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+</form>  -->
 
 
 
