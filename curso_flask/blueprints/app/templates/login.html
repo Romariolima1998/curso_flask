@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% include "components/notification.html" %}
+
+{% if form.errors %}
+  {% for error in form.errors %}
+    <div class="alert alert-danger ">
+      {{error}}
+    </div>
+  {% endfor %}
+{% endif %}
+
+
+  {{ render_form(form )}}
+
+
+
+<!--
+
+<form action="{{ url_for('auth.login') }}" method='POST'>
+
+  {{ form.csrf_token }}
+  
+  <div class="form-group">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      {{form.email(class="form-control", id="inputEmail4")}}
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      {{form.password(class="form-control", id="inputPassword4")}}
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+    <div class="form-check form-check-inline">
+  
+    {{form.remember(class="form-check-input", id="inlineCheckbox1")}}
+  <label class="form-check-label" for="inlineCheckbox1">remember</label>
+</div>
+     
+    </div>
+  </div>
+    {{form.submit(class="btn btn-primary")}}
+</form> -->
+
+
+{% endblock content %} 

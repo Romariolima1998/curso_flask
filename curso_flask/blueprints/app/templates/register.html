@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% from 'bootstrap/form.html' import render_form %}
+{% include "nav.html" %}
+
+ 
+  {{render_form(form)}}
+ 
+
+<!--
+<form action="{{ url_for('auth.register') }}" method='POST'>
+  <div class="form-group"></div>
+  <div class="form-group">
+    <label for="inputAddress">Name</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder=" Alex silva ..." name="name">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" name="email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" name="password">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+     
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>  
+-->
+
+
+{% endblock content %}

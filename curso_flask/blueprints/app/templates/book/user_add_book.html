@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+    {% include "nav.html" %}
+    {% include "components/notification.html" %}
+
+    {{ render_form(form)}}
+
+{% endblock content %}
