@@ -17,6 +17,7 @@ email-validator = "^2.2.0"
 alembic = "^1.14.0"
 pytest = "^8.3.4"
 flask-mail = "^0.10.0"
+flask-admin = "^1.6.1"
 
 
 [build-system]
